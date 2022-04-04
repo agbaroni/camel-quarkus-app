@@ -4,6 +4,7 @@
 	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>camel-quarkus-test</artifactId>
   <build>
+    <directory>${buildDirectory}</directory>
     <plugins>
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
@@ -137,6 +138,7 @@
   <name>Camel Quarkus Tests</name>
   <packaging>jar</packaging>
   <properties>
+    <buildDirectory>${project.basedir}/target</buildDirectory>
     <quarkus.groupId>com.redhat.quarkus.platform</quarkus.groupId>
     <quarkus.version>2.2.5.SP1-redhat-00001</quarkus.version>
   </properties>
