@@ -3,10 +3,14 @@
         xmlns="http://camel.apache.org/schema/spring"
         xsi:schemaLocation="http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
   <route>
-    <from uri="timer:bar?period=1000"/>
+    <from uri="timer:bar?period=2000"/>
     <pollEnrich>
-      <simple>file:/tmp/camel?fileName=pippo.txt&amp;noop=true</simple>
+      <simple>file:/tmp/camel?fileName=pippo.txt&amp;noop=true&amp;idempotent=false</simple>
     </pollEnrich>
+    <convertBodyTo type="String" />
+    <setBody>
+      <groovy>body.substring(0,2)</groovy>
+    </setBody>
     <to uri="log:camel-quarkus-application?level=INFO&amp;showAll=true" />
   </route>
 </routes>
