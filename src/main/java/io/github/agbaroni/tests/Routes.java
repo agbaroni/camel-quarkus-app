@@ -6,7 +6,7 @@ public class Routes extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-	from("timer:foo?period=2000")
+	from("timer:foo?period=10000")
 	    .log("Ciao mondo!");
     }
 }
