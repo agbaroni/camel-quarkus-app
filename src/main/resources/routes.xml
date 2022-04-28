@@ -12,5 +12,9 @@
       <groovy>body.substring(0,2)</groovy>
     </setBody>
     <to uri="log:camel-quarkus-application?level=INFO&amp;showAll=true" />
+    <setBody>
+      <simple>ciao\nmondo</simple>
+    </setBody>
+    <to uri="log:camel-quarkus-application?level=INFO&amp;showAll=true" />
   </route>
 </routes>
